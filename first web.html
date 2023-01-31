@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fuel Calculator</title>
+</head>
+<body>
+  <h1>Fuel Calculator</h1>
+  <form>
+    <label for="distance">Distance (in miles):</label>
+    <input type="number" id="distance" name="distance" required>
+    <br>
+    <label for="mpg">MPG:</label>
+    <input type="number" id="mpg" name="mpg" required>
+    <br>
+    <label for="price">Price per gallon:</label>
+    <input type="number" id="price" name="price" required>
+    <br>
+    <input type="button" value="Calculate" onclick="calculate()">
+    <br>
+    <label for="total">Total Cost:</label>
+    <input type="text" id="total" name="total" readonly>
+  </form>
+
+  <script>
+    function calculate() {
+      let distance = document.getElementById("distance").value;
+      let mpg = document.getElementById("mpg").value;
+      let price = document.getElementById("price").value;
+      let total = (distance / mpg * price).toFixed(2);
+      document.getElementById("total").value = total;
+    }
+  </script>
+
+</body>
+</html>
